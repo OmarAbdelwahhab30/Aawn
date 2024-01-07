@@ -1,0 +1,37 @@
+{
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "PHPMVC\\": "app/",
+      "DataBase\\": "database/"
+    }
+  },
+  "authors": [
+    {
+      "name": "user",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "doctrine/dbal": "^3.7",
+    "doctrine/migrations": "^3.7",
+    "doctrine/orm": "^2.17",
+    "symfony/yaml": "^5.4",
+    "symfony/cache": "^5.4",
+    "ext-pdo": "*",
+    "rakit/validation": "^1.4",
+    "vlucas/phpdotenv": "^5.6",
+    "phpmailer/phpmailer": "^6.9",
+    "symfony/var-dumper": "^7.0"
+  },
+  "require-dev": {
+    "doctrine/data-fixtures": "^1.7"
+  },
+  "config": {
+    "platform": {
+      "php": "8.2.3"
+    },
+    "platform-check": false
+  }
+}
