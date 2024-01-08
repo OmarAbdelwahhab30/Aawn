@@ -54,7 +54,7 @@ class LoginController extends AbstractController
 
             if ($data != false && !empty($data)) {
                 unset($data->password);
-                $this->add($data); // add data to session
+                $this->add('user',$data); // add data to session
                 header("Location:" . URLROOT . "user/IndexController/index");
                 exit();
             } else {

@@ -25,8 +25,9 @@ final class Version20231224001752 extends AbstractMigration
         $admin_specialization->addColumn("id",Types::SMALLINT)->setAutoincrement(true);
         $admin_specialization->setPrimaryKey(['id']);
 
-        $admin_specialization->addColumn("specialization",Types::STRING)->setLength("255");
+        $admin_specialization->addColumn("specialization",Types::STRING)->setLength(255);
         $admin_specialization->addColumn("information",Types::TEXT);
+        $admin_specialization->addColumn("img",Types::STRING)->setLength(255);
 
     }
 

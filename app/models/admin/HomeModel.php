@@ -30,7 +30,7 @@ class HomeModel
 
     public function getHomeReports(){
 
-        $this->db->query("SELECT * FROM reports WHERE specialization_id = ".$_SESSION['data']->spec_id);
+        $this->db->query("SELECT * FROM reports WHERE specialization_id = ".$_SESSION['admin']->spec_id);
 
         if ($this->db->execute()){
             return $this->db->resultSet();

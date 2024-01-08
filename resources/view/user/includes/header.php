@@ -28,6 +28,7 @@
     />
 
     <link rel="icon" href="<?= ASSETS_ROOT ?>user/img/logo.jpeg" sizes="16x16 32x32 48x48 64x64"/>
+
     <link rel="stylesheet" type="text/css" href="<?= ASSETS_ROOT ?>user/css/main.css"/>
 </head>
 
@@ -90,11 +91,11 @@
                     </li>
 
                     <li class="list-item">
-                        <a class="item-link" href="<?= ASSETS_ROOT ?>user/all-reports.html"> انشاء بلاغ </a>
+                        <a class="item-link" href="<?= URLROOT ?>user/CreateReportController/preIndex"> انشاء بلاغ </a>
                     </li>
 
                     <li class="list-item">
-                        <a class="item-link" href="<?= ASSETS_ROOT ?>user/my-reports.html"> بلاغاتي </a>
+                        <a class="item-link" href="<?= URLROOT ?>user/MyReportsController/index"> بلاغاتي </a>
                     </li>
 
                     <li class="list-item">
@@ -105,7 +106,7 @@
                         <a class="item-link" href="<?= ASSETS_ROOT ?>user/index.html#contact-us"> التواصل </a>
                     </li>
                     <?php
-                    if (isset($_SESSION['data']->id)) {
+                    if (isset($_SESSION['user']->id)) {
                         ?>
                         <li class="list-item">
                             <a href="<?= ASSETS_ROOT ?>user/account.html" class="item-link"> الملف الشخصي </a>

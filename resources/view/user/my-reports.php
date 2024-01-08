@@ -16,9 +16,9 @@ include INCLUDES_USER_PATH . "header.php";
             </div>
 
             <div class="my-reports-contint">
-                <a href="<?= ASSETS_ROOT ?>user/previous-reports.php" class="my-reports-btn">البلاغات السابقه</a>
+                <a href="<?= URLROOT ?>user/PreviousReportsController/index" class="my-reports-btn">البلاغات السابقه</a>
 
-                <a href="<?= ASSETS_ROOT ?>user/current-reports.php" class="my-reports-btn">
+                <a href="<?= URLROOT ?>user/CurrentReportsController/index" class="my-reports-btn">
                     البلاغات الحاليه
                 </a>
             </div>

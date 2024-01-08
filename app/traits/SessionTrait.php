@@ -6,9 +6,9 @@ namespace PHPMVC\traits;
 trait SessionTrait
 {
 
-    public static function add($data = []): void
+    public static function add($key,$data = []): void
     {
-        $_SESSION['data'] = $data;
+        $_SESSION[$key] = $data;
     }
 
     public function edit($key,$value)

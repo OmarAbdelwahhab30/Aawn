@@ -11,7 +11,7 @@ class AccountController extends AbstractController
 
     public function __construct()
     {
-        if (!isset($_SESSION['data'])){
+        if (!isset($_SESSION['admin'])){
             header("location:".URLROOT."admin/LoginController/index");
             exit();
         }
@@ -42,7 +42,7 @@ class AccountController extends AbstractController
 
             $PARAMS = [
                 'username' => 'required|min:6',
-                'email' => 'required|mail|unique:admins,email,'.$_SESSION['data']->email,
+                'email' => 'required|mail|unique:admins,email,'.$_SESSION['admin']->email,
                 'password' => 'required|regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!])(.{8,})$/',
                 'confirm_password' => 'required|same:password'
             ];
@@ -83,8 +83,8 @@ class AccountController extends AbstractController
 
     private function updateSession(array $data)
     {
-        $_SESSION['data']->username = $data['username'];
-        $_SESSION['data']->email = $data['email'];
+        $_SESSION['admin']->username = $data['username'];
+        $_SESSION['admin']->email = $data['email'];
     }
 
 }

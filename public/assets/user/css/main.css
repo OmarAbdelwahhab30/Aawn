@@ -808,7 +808,7 @@ button {
 
 .reports-contint {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
@@ -831,7 +831,7 @@ button {
 }
 
 .reports-contint .reports-item .reports-logo {
-  width: 80px;
+  width: 120px;
   height: 80px;
 }
 
@@ -856,7 +856,7 @@ button {
 
 @media (max-width: 768px) {
   .reports-contint {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

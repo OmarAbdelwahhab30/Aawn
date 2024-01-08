@@ -12,7 +12,7 @@ class HomeController extends AbstractController
     public function __construct()
     {
 
-        if (!isset($_SESSION['data'])){
+        if (!isset($_SESSION['admin'])){
             header("location:".URLROOT."admin/LoginController/index");
             exit();
         }

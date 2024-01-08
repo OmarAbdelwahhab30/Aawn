@@ -26,7 +26,7 @@ class AccountModel
 
         $this->db->bindValues(":password", hash("sha256", $postData['password']));
 
-        $this->db->bindValues(":id", $_SESSION['data']->id);
+        $this->db->bindValues(":id", $_SESSION['admin']->id);
 
         if ($this->db->execute()) {
             return true;

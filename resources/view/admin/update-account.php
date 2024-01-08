@@ -59,7 +59,7 @@ include INCLUDES_ADMIN_PATH."header.php";
                                                 <div class="mb-3">
                                                     <h4 class="form-label" for="formrow-Fullname-input">تحديث الاسم</h4>
                                                     <input  type="text" name="username"  class="form-control" style="text-align: right" id="formrow-Fullname-input"
-                                                            placeholder="<?=$_SESSION['data']->username?>">
+                                                            placeholder="<?=$_SESSION['admin']->username?>">
                                                     <?php
                                                     if (isset($errors) && !empty($errors)) {
                                                         ?>
@@ -75,7 +75,7 @@ include INCLUDES_ADMIN_PATH."header.php";
                                                     <h4 class="form-label" for="formrow-email-input"> البريد
                                                          الإلكتروني الجديد</h4>
                                                     <input type="email" name="email" style="text-align: right" class="form-control" id="formrow-email-input"
-                                                           placeholder="<?=$_SESSION['data']->email?>">
+                                                           placeholder="<?=$_SESSION['admin']->email?>">
                                                     <?php
                                                     if (isset($errors) && !empty($errors)) {
                                                         ?>

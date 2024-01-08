@@ -15,7 +15,7 @@ class LoginController extends AbstractController
 
     public function __construct()
     {
-        if (isset($_SESSION['data'])){
+        if (isset($_SESSION['admin'])){
             header("location:".URLROOT."admin/HomeController/index");
             exit();
         }
@@ -55,9 +55,10 @@ class LoginController extends AbstractController
             }
             $data = $this->loginModel->login($_POST['email'],hash("sha256",$_POST['password']));
 
-            if ($data != false && !empty($data)){
+            if ($data != false && !empty($data))
+            {
                 unset($data->password);
-                $this->add($data); // add data to session
+                $this->add('admin',$data); // add data to session
                 header("Location:".URLROOT."admin/HomeController/index");
                 exit();
             }else{

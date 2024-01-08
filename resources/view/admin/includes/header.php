@@ -79,7 +79,7 @@
 
                     <button type="button" style="cursor: default" class="btn header-item"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span><?= $_SESSION['data']->specialization ?></span>
+                        <span><?= $_SESSION['admin']->specialization ?></span>
                     </button>
                 </div>
                 <div class="dropdown d-inline-block">
@@ -96,7 +96,7 @@
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img class="rounded-circle header-profile-user" src="<?= ASSETS_ROOT ?>admin/images/admin.png"
                              alt="Header Avatar">
-                        <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15"><?= $_SESSION['data']->username ?></span>
+                        <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15"><?= $_SESSION['admin']->username ?></span>
                     </button>
                 </div>
 

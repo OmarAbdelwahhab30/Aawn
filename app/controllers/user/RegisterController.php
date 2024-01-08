@@ -62,8 +62,8 @@ class RegisterController extends AbstractController
             if ($this->dbHandler->register($data)) {
                 $user = $this->dbHandler->getUser($data['username']);
                 unset($user->password);
-                $this->add($user);
-                header("Location:" . URLROOT . "user/Indexontroller/index");
+                $this->add('user',$user);
+                header("Location:" . URLROOT . "user/IndexController/index");
                 exit();
             }
             $_SESSION['msg'] = "حدث خطأ ما" ;

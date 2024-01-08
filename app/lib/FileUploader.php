@@ -15,7 +15,7 @@ class FileUploader
     // BY BYTES
     const REQUIRED_SIZE = 1862923 ;
 
-    const FILE_REQUIRED_TYPE = array('image/jpg','image/png','image/jpeg','image/gif','image/jfif');
+    const FILE_REQUIRED_TYPE = array('image/jpg','image/png','image/jpeg','file/pdf');
 
     private mixed $File_Temp_Name ;
     private mixed $File_Error_Code;

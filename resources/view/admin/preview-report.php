@@ -62,7 +62,7 @@ include INCLUDES_ADMIN_PATH."header.php";
                                                         <div class="tab-pane fade show active" id="product-1"
                                                              role="tabpanel" aria-labelledby="#product-1-tab">
                                                             <div class="product-img">
-                                                                <img src="<?=ASSETS_ROOT?>admin/images/<?=$data['report']->attachment?>" alt=""
+                                                                <img src="<?=ASSETS_ROOT?>admin/images/reports/<?=$data['report']->attachment?>" alt=""
                                                                      class="img-fluid mx-auto d-block"
                                                                      data-zoom="assets/images/product/img-1.png">
                                                             </div>
@@ -195,7 +195,7 @@ include INCLUDES_ADMIN_PATH."header.php";
                                     <div class="col-xl-7">
                                         <div class="mt-4 mt-xl-3 ps-xl-4">
                                             <h5 class="font-size-14">
-                                                <a href="#" class="text-muted">التخصص | <?=$_SESSION['data']->specialization?></a>
+                                                <a href="#" class="text-muted">التخصص | <?=$_SESSION['admin']->specialization?></a>
                                             </h5>
                                             <h4 class="font-size-20 mb-3"> اسم صاحب البلاغ | <?=$data['report']->username?></h4>
 

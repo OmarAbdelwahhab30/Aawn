@@ -15,69 +15,19 @@ include INCLUDES_USER_PATH . "header.php";
                 <p class="desc">حدد نوع البلاغ</p>
             </div>
 
-            <div class="reports-contint">
-                <a href="<?= ASSETS_ROOT ?>user/create-report.php" class="reports-item">
+            <div class="reports-contint" style="grid-template-columns: repeat(3, 1fr);">
+                <?php
+                foreach ($data as $spec){
+                ?>
+                <a href="<?= URLROOT ?>user/CreateReportController/index/<?=$spec->id?>" class="reports-item">
                     <div class="reports-logo">
-                        <img src="<?= ASSETS_ROOT ?>user/img/cleanliness.png" alt="cleanliness" loading="lazy">
+                        <img src="<?= ASSETS_ROOT ?>user/img/<?=$spec->img?>" alt="cleanliness" loading="lazy">
                     </div>
-                    <p class="reports-title">الصحيه</p>
+                    <p class="reports-title"><?=$spec->specialization?></p>
                 </a>
-
-                <a href="<?= ASSETS_ROOT ?>user/create-report.php" class="reports-item">
-                    <div class="reports-logo">
-                        <img src="<?= ASSETS_ROOT ?>user/img/safe.png" alt="cleanliness" loading="lazy">
-                    </div>
-                    <p class="reports-title">السلامة الشخصية</p>
-                </a>
-
-                <a href="<?= ASSETS_ROOT ?>user/create-report.php" class="reports-item">
-                    <div class="reports-logo">
-                        <img src="<?= ASSETS_ROOT ?>user/img/infra.png" alt="cleanliness" loading="lazy">
-                    </div>
-                    <p class="reports-title">البنية التحتية</p>
-                </a>
-
-                <a href="<?= ASSETS_ROOT ?>user/create-report.php" class="reports-item">
-                    <div class="reports-logo">
-                        <img src="<?= ASSETS_ROOT ?>user/img/organize.png" alt="cleanliness" loading="lazy">
-                    </div>
-                    <p class="reports-title">الازدحام والتنظيم</p>
-                </a>
-
-                <a href="<?= ASSETS_ROOT ?>user/create-report.php" class="reports-item">
-                    <div class="reports-logo">
-                        <img src="<?= ASSETS_ROOT ?>user/img/infection.png" alt="cleanliness" loading="lazy">
-                    </div>
-                    <p class="reports-title">التلوث البيئي</p>
-                </a>
-
-                <a href="<?= ASSETS_ROOT ?>user/create-report.php" class="reports-item">
-                    <div class="reports-logo">
-                        <img src="<?= ASSETS_ROOT ?>user/img/monitoring.png" alt="monitoring" loading="lazy">
-                    </div>
-                    <p class="reports-title">الصيانة</p>
-                </a>
-
-                <a href="<?= ASSETS_ROOT ?>user/create-report.php" class="reports-item">
-                    <div class="reports-logo">
-                        <img src="<?= ASSETS_ROOT ?>user/img/lost-and-found.png" alt="lost" loading="lazy">
-                    </div>
-                    <p class="reports-title">المفقودات الشخصيه</p>
-                </a>
-
-                <a href="<?= ASSETS_ROOT ?>user/create-report.php" class="reports-item">
-                    <div class="reports-logo">
-                        <img src="<?= ASSETS_ROOT ?>user/img/animal-cruelty.png" alt="animal" loading="lazy">
-                    </div>
-                    <p class="reports-title">الحيوانات الضاره</p>
-                </a>
-
-                <a href="<?= ASSETS_ROOT ?>user/create-report.php" class="reports-item">
-                    <div class="reports-logo">
-                        <img src="<?= ASSETS_ROOT ?>user/img/electronic.png" alt="electronic" loading="lazy">
-                    </div>
-                    <p class="reports-title">التقنيه</p>
-                </a>
+                    <?php
+                }
+                    ?>
             </div>
         </div>
     </section>

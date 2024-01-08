@@ -46,3 +46,4 @@ define("INCLUDES_USER_PATH" , VIEW_PATH."user".DS."includes".DS);
 
 define("INCLUDES_ADMIN_PATH" , VIEW_PATH."admin".DS."includes".DS);
 
+define("REPORTS_FILES_PATH",$_SERVER['DOCUMENT_ROOT']."/Aawn/Public/assets/admin/images/reports/");

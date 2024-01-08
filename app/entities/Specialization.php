@@ -26,6 +26,9 @@ class Specialization
     #[Column(type: Types::TEXT)]
     private $information;
 
+    #[Column(type: Types::STRING, length: 255)]
+    private $img;
+
     /**
      * @return mixed
      */
@@ -72,6 +75,22 @@ class Specialization
     public function setInformation($information): void
     {
         $this->information = $information;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImg(): mixed
+    {
+        return $this->img;
+    }
+
+    /**
+     * @param mixed $img
+     */
+    public function setImg(string $img): void
+    {
+        $this->img = $img;
     }
 
 }

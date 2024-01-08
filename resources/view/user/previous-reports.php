@@ -10,65 +10,44 @@ include INCLUDES_USER_PATH . "header.php";
                 <h2 class="sub-title">البلاغات السابقه</h2>
 
                 <div class="my-reports-content">
-                    <div class="my-reports-item">
-                        <div class="my-reports-img">
-                            <img src="<?= ASSETS_ROOT ?>user/img/unlock.png" alt="unlock"/>
 
-                            <span class="reports-status"> بلاغ مغلق </span>
+                    <?php
+                    if (isset($data) && !empty($data)){
+                        foreach ($data as $report){
+                            ?>
+                            <div class="my-reports-item">
+                                <div class="my-reports-img">
+                                    <img src="<?= ASSETS_ROOT ?>user/img/unlock.png" alt="unlock"/>
+
+                                    <span class="reports-status"> بلاغ مغلق </span>
+                                </div>
+
+                                <div class="my-reports-info">
+                                    <p class="report-info">
+                                        <span> رقم البلاغ </span>
+                                        <span> #report-<?=$report->id?> </span>
+                                        <span> <?=$report->date_reported?> </span>
+                                    </p>
+
+                                    <h3 class="report-title"><?=$report->specialization?></h3>
+
+                                    <p class="report-desc"><?=$report->description?></p>
+                                </div>
+                            </div>
+
+                            <?php
+                        }
+                    }else{
+                        ?>
+                        <div class="alert alert-info alert-dismissible fade show mt-4 px-4 mb-0 text-center" role="alert">
+                            <i class="uil uil-exclamation-octagon d-block display-4 mt-2 mb-3 text-danger"></i>
+                            <h5 class="text-info">!!</h5>
+                            <p>لا يوجد بلاغات سابقة</p>
                         </div>
+                            <?php
+                    }
 
-                        <div class="my-reports-info">
-                            <p class="report-info">
-                                <span> رقم البلاغ </span>
-                                <span> 123456 </span>
-                                <span> 12/12/2021 </span>
-                            </p>
-
-                            <h3 class="report-title">بلاغات صحيه</h3>
-
-                            <p class="report-desc">نظافة دورات المياه</p>
-                        </div>
-                    </div>
-
-                    <div class="my-reports-item">
-                        <div class="my-reports-img">
-                            <img src="<?= ASSETS_ROOT ?>user/img/unlock.png" alt="unlock"/>
-
-                            <span class="reports-status"> بلاغ مغلق </span>
-                        </div>
-
-                        <div class="my-reports-info">
-                            <p class="report-info">
-                                <span> رقم البلاغ </span>
-                                <span> 123456 </span>
-                                <span> 12/12/2021 </span>
-                            </p>
-
-                            <h3 class="report-title">بلاغات صحيه</h3>
-
-                            <p class="report-desc">نظافة دورات المياه</p>
-                        </div>
-                    </div>
-
-                    <div class="my-reports-item">
-                        <div class="my-reports-img">
-                            <img src="<?= ASSETS_ROOT ?>user/img/unlock.png" alt="unlock"/>
-
-                            <span class="reports-status"> بلاغ مغلق </span>
-                        </div>
-
-                        <div class="my-reports-info">
-                            <p class="report-info">
-                                <span> رقم البلاغ </span>
-                                <span> 123456 </span>
-                                <span> 12/12/2021 </span>
-                            </p>
-
-                            <h3 class="report-title">بلاغات صحيه</h3>
-
-                            <p class="report-desc">نظافة دورات المياه</p>
-                        </div>
-                    </div>
+                    ?>
                 </div>
             </div>
         </div>

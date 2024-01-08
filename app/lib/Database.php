@@ -65,12 +65,12 @@ class Database
         return $this->statement->execute();
     }
 
-    public function join($values, $table1, $table2, $condition1,$table3 = null,$condition2 = null)
+    public function join($values, $table1, $table2, $condition1,$table3 = null,$condition2 = null,$where=1)
     {
         $third = $table3 != null ? " CROSS JOIN $table3 ON $condition2 ":"";
         $this->query("SELECT $values
         FROM $table1
-        CROSS JOIN $table2 ON $condition1".$third);
+        CROSS JOIN $table2 ON $condition1".$third." WHERE ".$where);
     }
 
     public function resultSet()

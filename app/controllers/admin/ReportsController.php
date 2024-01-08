@@ -21,7 +21,7 @@ class ReportsController extends AbstractController
 
     public function __construct()
     {
-        if (!isset($_SESSION['data'])){
+        if (!isset($_SESSION['admin'])){
             header("location:".URLROOT."admin/LoginController/index");
             exit();
         }
@@ -40,7 +40,7 @@ class ReportsController extends AbstractController
             "cond1"     => " reports.user_id = users.id",
             "cond2"     => "reports.specialization_id = admin_specialization.id ",
             "ColsName"  => " reports.status,reports.date_reported,users.username,attachment,reports.id",
-            "where"     => "reports.specialization_id = " .$_SESSION['data']->spec_id,
+            "where"     => "reports.specialization_id = " .$_SESSION['admin']->spec_id,
         ];
         $this->PaginatorInstance = new Paginator(self::TABLE_NAME,"id",$JoinInfo['where'],$page,$JoinInfo);
         $this->PagesNum = $this->PaginatorInstance->GetPagesNum();
