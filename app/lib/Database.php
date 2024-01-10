@@ -70,7 +70,7 @@ class Database
         $third = $table3 != null ? " CROSS JOIN $table3 ON $condition2 ":"";
         $this->query("SELECT $values
         FROM $table1
-        CROSS JOIN $table2 ON $condition1".$third." WHERE ".$where);
+       LEFT JOIN $table2 ON $condition1".$third." WHERE ".$where);
     }
 
     public function resultSet()

@@ -49,7 +49,7 @@ class CreateReportModel
         $this->db->bindValues(":status", "في انتظار الاعتماد");
         $this->db->bindValues(":location", $data['location']);
         $this->db->bindValues(":attachment", $data['file']);
-        $this->db->bindValues(":user_id", $_SESSION['admin']->id);
+        $this->db->bindValues(":user_id", $_SESSION['user']->id);
         $this->db->bindValues(":specialization_id", $data['spec_id']);
 
         if ($this->db->execute()) {

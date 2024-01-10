@@ -99,11 +99,11 @@
                     </li>
 
                     <li class="list-item">
-                        <a class="item-link" href="<?= ASSETS_ROOT ?>user/complaints.html"> الشكاوي والاقتراحات </a>
+                        <a class="item-link" href="<?= URLROOT ?>user/ComplaintsSuggestionsController/preIndex"> الشكاوي والاقتراحات </a>
                     </li>
 
                     <li class="list-item">
-                        <a class="item-link" href="<?= ASSETS_ROOT ?>user/index.html#contact-us"> التواصل </a>
+                        <a class="item-link" href="<?= URLROOT ?>user/IndexController/index"> التواصل </a>
                     </li>
                     <?php
                     if (isset($_SESSION['user']->id)) {

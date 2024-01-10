@@ -9,65 +9,43 @@ include INCLUDES_USER_PATH . "header.php";
                     <h2 class="sub-title">الشكاوي و الاقتراحات السابقه</h2>
 
                     <div class="my-reports-content">
+                    <?php
+                    if (isset($data) && !empty($data)){
+                        foreach ($data as $report){
+                            ?>
                         <div class="my-reports-item">
                             <div class="my-reports-img">
-                                <img src="<?= ASSETS_ROOT ?>user/img/suggestion.png" alt="unlock"/>
+                                <img style="height: 125px;width: 125px" src="<?= ASSETS_ROOT ?>admin/images/complaint_suggestion/<?=$report->attachment?>" alt="unlock"/>
                             </div>
 
                             <div class="my-reports-info">
                                 <p class="report-info">
-                                    <span> رقم الشكوى | الاقتراح </span>
-                                    <span> 123456 </span>
-                                    <span> 12/12/2021 </span>
+                                    <span> رقم الشكوى </span>
+                                    <span> #report-<?=$report->id?> </span>
+                                    <span> <?=$report->date?> </span>
                                 </p>
+
                                 <div class="submit">
-                                    <a type="button" href="<?= ASSETS_ROOT ?>user/preview-complaint-suggestion.php"
+                                    <a type="button" href="<?= URLROOT ?>user/ComplaintsSuggestionsController/displaySpecificSuggestionByID/<?=$report->id?>"
                                        class="custom-btn outline">
                                         عرض
                                     </a>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="my-reports-item">
-                            <div class="my-reports-img">
-                                <img src="<?= ASSETS_ROOT ?>user/img/suggestion.png" alt="unlock"/>
-                            </div>
-
-                            <div class="my-reports-info">
-                                <p class="report-info">
-                                    <span> رقم الشكوى | الاقتراح </span>
-                                    <span> 123456 </span>
-                                    <span> 12/12/2021 </span>
-                                </p>
-                                <div class="submit">
-                                    <a type="button" href="<?= ASSETS_ROOT ?>user/preview-complaint-suggestion.php"
-                                       class="custom-btn outline">
-                                        عرض
-                                    </a>
-                                </div>
-                            </div>
+<?php
+                        }
+                    } else{
+                        ?>
+                        <div class="alert alert-info alert-dismissible fade show mt-4 px-4 mb-0 text-center" role="alert">
+                            <i class="uil uil-exclamation-octagon d-block display-4 mt-2 mb-3 text-danger"></i>
+                            <h5 class="text-info">!!</h5>
+                            <p>لا يوجد بيانات سابقة</p>
                         </div>
+                        <?php
+                        }
 
-                        <div class="my-reports-item">
-                            <div class="my-reports-img">
-                                <img src="<?= ASSETS_ROOT ?>user/img/suggestion.png" alt="unlock"/>
-                            </div>
-
-                            <div class="my-reports-info">
-                                <p class="report-info">
-                                    <span> رقم الشكوى | الاقتراح </span>
-                                    <span> 123456 </span>
-                                    <span> 12/12/2021 </span>
-                                </p>
-                                <div class="submit">
-                                    <a type="button" href="<?= ASSETS_ROOT ?>user/preview-complaint-suggestion.php"
-                                       class="custom-btn outline">
-                                        عرض
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        ?>
                     </div>
                 </div>
             </div>

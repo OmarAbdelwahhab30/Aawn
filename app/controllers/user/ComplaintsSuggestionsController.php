@@ -5,32 +5,30 @@ namespace PHPMVC\controllers\user;
 use PHPMVC\lib\AbstractController;
 use PHPMVC\lib\FileUploader;
 
-class CreateReportController extends AbstractController
+class ComplaintsSuggestionsController extends AbstractController
 {
 
-
-    private mixed $createReportModel;
+    private mixed $model;
 
     public function __construct()
     {
-        $this->createReportModel = $this->Model("user.CreateReportModel");
+        $this->model = $this->Model("user.CreateSuggestionModel");
     }
 
-    public function preIndex()
-    {
-        $specializations = $this->createReportModel->getReportsSpecialization();
-        $this->Route("user.all-reports", $specializations);
+    public function preIndex(){
+        $this->Route("user.complaints");
     }
 
-    public function index($id, $data = [])
-    {
-        $spec = $this->createReportModel->getSpecializationByID($id);
-        $this->Route("user.create-report", $spec, $data);
+    public function getCreateComplaintSuggestionView($data = []){
+        $this->Route("user.create-complaint-suggestion",$data);
     }
 
-    public function createReport()
-    {
+    public function getPreviousComplaintSuggestionsView(){
+        $pre = $this->model->getPreviousComplaintSuggestions();
+        $this->Route("user.previous-complaints-suggestions",$pre);
+    }
 
+    public function createSuggestionOrComplaint(){
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $data = [];
@@ -52,32 +50,38 @@ class CreateReportController extends AbstractController
             $validation = $this->Validator($PARAMS, $messages);
 
             if ($validation->fails()) {
-                $this->index($_POST['spec_id'], $validation->errors());
+                $this->getCreateComplaintSuggestionView($validation->errors());
                 exit();
             }
 
             $data = [
                 'location' => trim($_POST['location']),
                 'info' => trim($_POST['info']),
-                'spec_id' => trim($_POST['spec_id']),
             ];
             if ($_FILES['file']['name'] != "") {
-                $ImageInstance = new FileUploader($_FILES['file'], REPORTS_FILES_PATH);
+                $ImageInstance = new FileUploader($_FILES['file'], COM_SUGG_FILES_PATH);
                 $data['file'] = trim($_FILES['file']['name']);
                 $ImageInstance->Move_File();
             } else {
-                $data['file'] = "report.png";
+                $data['file'] = "suggestion.png";
             }
-            if ($this->createReportModel->addReportToDB($data)) {
+            if ($this->model->addSuggestionToDB($data)) {
 
-                $_SESSION['success'] = "تمت إضافة البلاغ بنجاح";
-                $this->index($_POST['spec_id'], []);
+                $_SESSION['success'] = "تمت الإضافة بنجاح";
+                $this->getCreateComplaintSuggestionView([]);
                 exit();
             }
             $_SESSION['error'] = "حدث خطأ ما";
-            $this->index($_POST['spec_id'], []);
+            $this->getCreateComplaintSuggestionView([]);
             exit();
         }
         header("location:" . URLROOT . "user/IndexController/index");
+    }
+
+
+    public function displaySpecificSuggestionByID($id)
+    {
+        $return = $this->model->getSpecificSuggestionByID($id);
+        $this->Route("user.preview-complaint-suggestion",$return);
     }
 }

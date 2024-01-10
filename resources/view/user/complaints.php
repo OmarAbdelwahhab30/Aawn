@@ -17,7 +17,7 @@ include INCLUDES_USER_PATH . "header.php";
             </div>
 
             <div class="my-reports-contint">
-                <a href="<?= ASSETS_ROOT ?>user/create-complaint-suggestion.php" class="my-reports-btn">
+                <a href="<?= URLROOT ?>user/ComplaintsSuggestionsController/getCreateComplaintSuggestionView" class="my-reports-btn">
                     <span> إنشاء شكوى </span>
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -29,7 +29,7 @@ include INCLUDES_USER_PATH . "header.php";
                     </svg>
                 </a>
 
-                <a href="<?= ASSETS_ROOT ?>user/create-complaint-suggestion.php" class="my-reports-btn">
+                <a href="<?= URLROOT ?>user/ComplaintsSuggestionsController/getCreateComplaintSuggestionView" class="my-reports-btn">
                     <span> إنشاء اقتراح </span>
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -41,7 +41,7 @@ include INCLUDES_USER_PATH . "header.php";
                     </svg>
                 </a>
 
-                <a href="<?= ASSETS_ROOT ?>user/previous-complaints-suggestions.php" class="my-reports-btn">
+                <a href="<?= URLROOT ?>user/ComplaintsSuggestionsController/getPreviousComplaintSuggestionsView" class="my-reports-btn">
                     <span class="text-center"> الشكاوي و الاقتراحات السابقة </span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

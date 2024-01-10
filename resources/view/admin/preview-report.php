@@ -1,4 +1,5 @@
 <?php
+dd($data);
 $pageTitle = 'عرض البلاغ';
 include INCLUDES_ADMIN_PATH."header.php";
 
