@@ -34,11 +34,11 @@ class ReportsModel
         $this->db->join('reports.id,reports.status,reports.date_reported,users.username,attachment,reports.location,reports.description',
             "reports",
             "users",
-            "reports.user_id = users.id AND reports.id= :id", "admin_specialization", "reports.specialization_id = admin_specialization.id");
+            " reports.id = :id AND reports.user_id = users.id ", "admin_specialization", "reports.specialization_id = admin_specialization.id");
         $this->db->bindValues(":id", $reportId);
         $this->db->execute();
         if ($this->db->rowCount() > 0) {
-            return $this->db->single();
+            return $this->db->resultSet();
         }
         return [];
     }

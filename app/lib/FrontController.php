@@ -24,10 +24,7 @@ class FrontController
     {
         $url = explode(
             "/", trim(
-            parse_url(
-                str_replace("/Aawn/public/index/", "", $_SERVER['REQUEST_URI']
-                ),
-                PHP_URL_PATH), "/"), 4);
+            parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH), "/"), 4);
 
 
         $this->_prefix = $url[0];
@@ -46,7 +43,6 @@ class FrontController
 
     public function dispatch()
     {
-
         if (file_exists(APP_PATH . DS . "controllers" . DS . $this->_prefix . DS . ucwords($this->_controller) . ".php")) {
             require_once APP_PATH . DS . "controllers" . DS . $this->_prefix . DS . ucwords($this->_controller) . ".php";
         } else {

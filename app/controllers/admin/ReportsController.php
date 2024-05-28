@@ -55,7 +55,7 @@ class ReportsController extends AbstractController
     }
 
     public function viewReport($reportId){
-        $data['report'] = $this->ReportsModel->getReportById($reportId);
+        $data= $this->ReportsModel->getReportById($reportId);
         $this->Route("admin.preview-report",$data);
     }
 

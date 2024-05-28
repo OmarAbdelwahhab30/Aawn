@@ -25,10 +25,13 @@ $connection = DriverManager::getConnection([
     'user' => $_ENV['DB_USERNAME'],
     'password' => $_ENV['DB_PASSWORD'],
     'host' => $_ENV['DB_HOST'],
+    'port' => $_ENV['DB_PORT_NUMBER'],
     'driver' => $_ENV['DB_DRIVER'],
     'memory' => false
 ]);
 
+
 $entityManager = new EntityManager($connection, $ORMConfig);
+
 
 return DependencyFactory::fromEntityManager($config, new ExistingEntityManager($entityManager));

@@ -1,0 +1,27 @@
+version: '3'
+services:
+  my-app:
+    build:
+      dockerfile: ./Dockerfile
+    env_file:
+      - ./.env
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html/
+    depends_on:
+      - db
+  db:
+    container_name: db
+    image: mysql:8.0.21
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_DATABASE=aawn
+      - MYSQL_USER=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8001:80"
+

@@ -12,19 +12,22 @@ use Doctrine\ORM\ORMSetup;
 class Database
 {
     private $dbhostname = DB_HOST_NAME;
+
     private $dbname = DB_NAME;
     private $dbusername = DB_USER_NAME;
     private $dbpassword = DB_PASSWORD;
 
     private $dbhandler;
+
     private $error;
+
     private $statement;
 
     public function __construct()
     {
 
         try {
-            $this->dbhandler = new \PDO('mysql://hostname=' . $this->dbhostname . ';dbname=' . $this->dbname, $this->dbusername,
+            $this->dbhandler = new \PDO('mysql:host=' . $this->dbhostname . ';dbname=' . $this->dbname, $this->dbusername,
                 $this->dbpassword, array(
                     \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
                     \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES UTF8",
@@ -70,7 +73,7 @@ class Database
         $third = $table3 != null ? " CROSS JOIN $table3 ON $condition2 ":"";
         $this->query("SELECT $values
         FROM $table1
-       LEFT JOIN $table2 ON $condition1".$third." WHERE ".$where);
+       CROSS JOIN $table2 ON $condition1".$third." WHERE ".$where);
     }
 
     public function resultSet()

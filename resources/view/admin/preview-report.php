@@ -1,5 +1,5 @@
 <?php
-dd($data);
+//dd($data);
 $pageTitle = 'عرض البلاغ';
 include INCLUDES_ADMIN_PATH."header.php";
 
@@ -63,7 +63,7 @@ include INCLUDES_ADMIN_PATH."header.php";
                                                         <div class="tab-pane fade show active" id="product-1"
                                                              role="tabpanel" aria-labelledby="#product-1-tab">
                                                             <div class="product-img">
-                                                                <img src="<?=ASSETS_ROOT?>admin/images/reports/<?=$data['report']->attachment?>" alt=""
+                                                                <img src="<?=ASSETS_ROOT?>admin/images/reports/<?=$data[0]->attachment?>" alt=""
                                                                      class="img-fluid mx-auto d-block"
                                                                      data-zoom="assets/images/product/img-1.png">
                                                             </div>
@@ -101,7 +101,7 @@ include INCLUDES_ADMIN_PATH."header.php";
                                                                                     class="btn btn-outline-dark"
                                                                                     data-bs-dismiss="modal">تراجع
                                                                             </button>
-                                                                            <a  href="<?=URLROOT?>admin/ReportsController/updateReportStatus/<?=$data['report']->id?>/مغلق"
+                                                                            <a  href="<?=URLROOT?>admin/ReportsController/updateReportStatus/<?=$data[0]->id?>/مغلق"
                                                                                     class="btn btn-outline-danger">إغلاق
                                                                                 البلاغ
                                                                             </a>
@@ -139,7 +139,7 @@ include INCLUDES_ADMIN_PATH."header.php";
                                                                                         class="btn btn-outline-dark"
                                                                                         data-bs-dismiss="modal">تراجع
                                                                                 </button>
-                                                                                <a  href="<?=URLROOT?>admin/ReportsController/updateReportStatus/<?=$data['report']->id?>/معتمد""
+                                                                                <a  href="<?=URLROOT?>admin/ReportsController/updateReportStatus/<?=$data[0]->id?>/معتمد""
                                                                                         class="btn btn-outline-success">
                                                                                     اعتماد البلاغ
                                                                                 </a>
@@ -181,7 +181,7 @@ include INCLUDES_ADMIN_PATH."header.php";
                                                                             class="btn btn-outline-dark"
                                                                             data-bs-dismiss="modal">تراجع
                                                                     </button>
-                                                                    <a  href="<?=URLROOT?>admin/ReportsController/updateReportStatus/<?=$data['report']->id?>/في انتظار الاعتماد"
+                                                                    <a  href="<?=URLROOT?>admin/ReportsController/updateReportStatus/<?=$data[0]->id?>/في انتظار الاعتماد"
                                                                         class="btn btn-outline-primary">
                                                                         تعديل
                                                                     </a>
@@ -198,16 +198,16 @@ include INCLUDES_ADMIN_PATH."header.php";
                                             <h5 class="font-size-14">
                                                 <a href="#" class="text-muted">التخصص | <?=$_SESSION['admin']->specialization?></a>
                                             </h5>
-                                            <h4 class="font-size-20 mb-3"> اسم صاحب البلاغ | <?=$data['report']->username?></h4>
+                                            <h4 class="font-size-20 mb-3"> اسم صاحب البلاغ | <?=$data[0]->username?></h4>
 
                                             <div class="text-muted">
-                                                <?=$data['report']->date_reported?>
+                                                <?=$data[0]->date_reported?>
                                             </div>
                                             <div class="text-muted">
-                                                <?=$data['report']->location?>
+                                                <?=$data[0]->location?>
                                             </div>
                                             <p class="mt-4 text-muted fs-3">
-                                                <?=$data['report']->description?>
+                                                <?=$data[0]->description?>
                                             </p>
                                         </div>
                                     </div>

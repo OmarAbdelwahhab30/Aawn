@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-
 <head>
-
     <meta charset="utf-8"/>
     <title>عـــــــــــــــــــــــــــــــاون</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,22 +26,18 @@
         }
     </style>
 </head>
-
 <body class="authentication-bg">
 <div class="account-pages my-5 pt-sm-5">
     <div class="container">
         <?php
         if (isset($_SESSION['success'])){
             ?>
-
             <div class="alert alert-success alert-dismissible fade show mt-4 px-4 mb-0 text-center mb-4" role="alert">
                 <i class="uil uil-check-circle d-block display-4 mt-2 mb-3 text-success"></i>
                 <p class="fs-3"><?=$_SESSION['success']?></p>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-
                 </button>
             </div>
-
             <?php
             unset($_SESSION['success']);
         }elseif (isset($_SESSION['error'])){
@@ -63,7 +57,7 @@
         <div class="row" style="height: 148px">
             <div class="col-lg-12">
                 <div class="text-center">
-                    <a href="index.php" class="mb-5 d-block auth-logo">
+                    <a href="#" class="mb-5 d-block auth-logo">
                         <img src="<?= ASSETS_ROOT ?>admin/images/logo.png" style="height: 179px;width: 176px;"
                              class="logo logo-dark">
                         <img src="<?= ASSETS_ROOT ?>admin/images/logo.png" class="logo logo-light">

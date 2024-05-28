@@ -12,7 +12,8 @@ class AbstractController
 
     public function Model($modelname)
     {
-        require_once APP_PATH . "MODELS" . DS . str_replace(".", "\\", $modelname) . ".php";
+
+        require_once APP_PATH . "models" . DS . str_replace(".", DS, $modelname) . ".php";
         $modelname = "PHPMVC\MODELS\\" . str_replace(".", "\\", $modelname);
         return new $modelname();
     }

@@ -28,7 +28,7 @@ define("GOOGLE_USERNAME",$_ENV['GOOGLE_USERNAME']);
 
 define("GOOGLE_APP_PASSWORD",$_ENV['GOOGLE_APP_PASSWORD']);
 
-define("ASSETS_ROOT",str_replace("index/","assets/",$_ENV['URLROOT']));
+define("ASSETS_ROOT",$_ENV['URLROOT']."assets/");
 
 define("SITENAME",$_ENV['SITENAME']) ;
 
